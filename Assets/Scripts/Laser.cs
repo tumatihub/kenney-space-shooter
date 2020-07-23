@@ -20,7 +20,6 @@ public class Laser : MonoBehaviour
         else
         {
             Invoke("ReturnToPool", _lifeTime);
-            transform.parent = null;
         }
     }
 
@@ -41,7 +40,6 @@ public class Laser : MonoBehaviour
 
     private void ReturnToPool()
     {
-        transform.parent = PoolParent;
         this.gameObject.SetActive(false);
     }
 }

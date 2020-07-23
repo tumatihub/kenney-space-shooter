@@ -12,12 +12,13 @@ public class Weapon : MonoBehaviour
     [SerializeField] Laser _laserPrefab;
     int _laserPoolIndex = 0;
     [SerializeField] float _laserVelocity = 1f;
-    [SerializeField] Transform _laserPoolParent;
+    Transform _laserPoolParent;
 
     [SerializeField] Transform _centerLaserPosition;
 
     void Start()
     {
+        _laserPoolParent = new GameObject("LaserPool").transform;
         InitializeLaserPool();
     }
 
@@ -27,7 +28,6 @@ public class Weapon : MonoBehaviour
         {
             _laserPool[i] = Instantiate(_laserPrefab);
             _laserPool[i].gameObject.transform.parent = _laserPoolParent;
-            _laserPool[i].PoolParent = _laserPoolParent;
             _laserPool[i].gameObject.SetActive(false);
         }
     }
