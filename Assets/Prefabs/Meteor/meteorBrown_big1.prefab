@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2475988614449070751}
   - component: {fileID: 739936994459455661}
   - component: {fileID: 739936994459455662}
+  - component: {fileID: -2419132332322688937}
   m_Layer: 0
   m_Name: meteorBrown_big1
   m_TagString: Untagged
@@ -141,3 +142,18 @@ MonoBehaviour:
   _verticalDirectionOffset: 1
   _velocity: 2
   _rotationVelocity: 20
+--- !u!114 &-2419132332322688937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806172629091359329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2bcf4e3f0bb4544a866f6f90b40407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageTag: Projectile
+  _stats: {fileID: 11400000, guid: 980eb137525f30c45baafb62c41eacb8, type: 2}
+  _playerStats: {fileID: 11400000, guid: 54b0407a29660af41a8cf6631436aaa1, type: 2}

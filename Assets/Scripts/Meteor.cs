@@ -28,14 +28,6 @@ public class Meteor : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Projectile"))
-        {
-            SplitMeteorParts();
-        }    
-    }
-
     public void SetDirection(Vector2 direction)
     {
         _direction = direction;
@@ -51,6 +43,11 @@ public class Meteor : MonoBehaviour
             instance.SetDirection(new Vector2(_direction.x, Random.Range(-_verticalDirectionOffset, _verticalDirectionOffset)).normalized);
         }
 
+    }
+
+    void HandleDeath()
+    {
+        SplitMeteorParts();
         Destroy(gameObject);
     }
 }
