@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217a96210ef1c1548b87d413d02620bb, type: 3}
   m_Name: MedMeteorStats
   m_EditorClassIdentifier: 
-  _damage: 0
-  _maxHealth: 0
+  _damage: 1
+  _maxHealth: 2
   _health: 0

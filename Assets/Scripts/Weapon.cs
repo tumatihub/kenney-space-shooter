@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] float _fireDelay = .2f;
     float _fireCountdown = 0f;
-    const int _laserPoolSize = 50;
+    float _rocketCountdown = 0f;
+    const int _laserPoolSize = 100;
     Laser[] _laserPool = new Laser[_laserPoolSize];
     [SerializeField] Laser _laserPrefab;
     int _laserPoolIndex = 0;
-    [SerializeField] float _laserVelocity = 1f;
     Transform _laserPoolParent;
 
-    [SerializeField] Transform _centerLaserPosition;
+    [SerializeField] Transform[] _laserSpawners;
+    [SerializeField] WeaponStats _weaponStats;
 
     void Start()
     {
@@ -36,17 +36,36 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         Shoot();
+        if (_weaponStats.IsUsingRocket())
+        {
+            ShootRocket();
+        }
+    }
+
+    private void ShootRocket()
+    {
+        if (_rocketCountdown <= 0f && Input.GetButton("Fire1"))
+        {
+
+        }
+        else
+        {
+            _rocketCountdown -= Time.deltaTime;
+        }
     }
 
     private void Shoot()
     {
         if (_fireCountdown <= 0f && Input.GetButton("Fire1"))
         {
-            _laserPool[_laserPoolIndex].SetVelocity(_laserVelocity);
-            _laserPool[_laserPoolIndex].transform.position = _centerLaserPosition.position;
-            _laserPool[_laserPoolIndex].gameObject.SetActive(true);
-            _fireCountdown = _fireDelay;
-            _laserPoolIndex = _laserPoolIndex < _laserPool.Length - 1 ? _laserPoolIndex + 1 : 0;
+            for (var i = 0; i < _weaponStats.GetNumberOfLaserSpawners(); i++)
+            {
+                _laserPool[_laserPoolIndex].SetVelocity(_weaponStats.LaserSpeed);
+                _laserPool[_laserPoolIndex].transform.position = _laserSpawners[i].position;
+                _laserPool[_laserPoolIndex].gameObject.SetActive(true);
+                _fireCountdown = _weaponStats.GetLaserDelay();
+                _laserPoolIndex = _laserPoolIndex < _laserPool.Length - 1 ? _laserPoolIndex + 1 : 0;
+            }
         }
         else
         {

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38db5e597dd84cb418306d3ee3e41d31, type: 3}
+  m_Name: WeaponStats
+  m_EditorClassIdentifier: 
+  _laserSpeed: 10
+  _laserDelayLevel: 0
+  _laserDelays:
+  - 0.3
+  - 0.2
+  - 0.1
+  _rocketDelay: 0
+  _laserPowerLevel: 1
+  _laserPowerList:
+  - _numberOfSpawners: 1
+    _useRocket: 0
+  - _numberOfSpawners: 3
+    _useRocket: 0
+  - _numberOfSpawners: 3
+    _useRocket: 0
