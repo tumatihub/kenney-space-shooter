@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
     void Start()
     {
         _laserPoolParent = new GameObject("LaserPool").transform;
+        _weaponStats.RestartLevel();
         InitializeLaserPool();
     }
 
@@ -39,6 +40,21 @@ public class Weapon : MonoBehaviour
         if (_weaponStats.IsUsingRocket())
         {
             ShootRocket();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "DamagePowerUp":
+                _weaponStats.LevelUpPower();
+                break;
+            case "FireRatePowerUp":
+                _weaponStats.LevelUpLaserDelay();
+                break;
+            default:
+                break;
         }
     }
 

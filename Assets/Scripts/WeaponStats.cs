@@ -32,8 +32,15 @@ public class WeaponStats : ScriptableObject
         bool _useRocket;
         public bool UserRocket { get => _useRocket; }
     }
+
+
     [SerializeField]
     LaserPowerConfig[] _laserPowerList;
+    public void RestartLevel()
+    {
+        _laserDelayLevel = 0;
+        _laserPowerLevel = 0;
+    }
 
     public float GetLaserDelay()
     {
@@ -48,5 +55,25 @@ public class WeaponStats : ScriptableObject
     public bool IsUsingRocket()
     {
         return _laserPowerList[_laserPowerLevel].UserRocket;
+    }
+
+    public void LevelUpLaserDelay()
+    {
+        _laserDelayLevel = Mathf.Min(_laserDelayLevel + 1, _laserDelays.Length - 1);
+    }
+
+    public void LevelDownLaserDelay()
+    {
+        _laserDelayLevel = Mathf.Max(_laserDelayLevel - 1, 0);
+    }
+
+    public void LevelUpPower()
+    {
+        _laserPowerLevel = Mathf.Min(_laserPowerLevel + 1, _laserPowerList.Length - 1);
+    }
+
+    public void LevelDownPower()
+    {
+        _laserPowerLevel = Mathf.Max(_laserPowerLevel - 1, 0);
     }
 }

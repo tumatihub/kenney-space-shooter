@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38db5e597dd84cb418306d3ee3e41d31, type: 3}
   m_Name: WeaponStats
   m_EditorClassIdentifier: 
-  _laserSpeed: 10
-  _laserDelayLevel: 0
+  _laserSpeed: 20
+  _laserDelayLevel: 2
   _laserDelays:
+  - 0.4
   - 0.3
   - 0.2
-  - 0.1
   _rocketDelay: 0
   _laserPowerLevel: 1
   _laserPowerList:

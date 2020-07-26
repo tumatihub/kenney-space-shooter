@@ -7,7 +7,7 @@ public class SimpleSpawner : MonoBehaviour
     [SerializeField] int _maxHeight = 10;
     [SerializeField] float _delay = 5f;
     float _cooldown = 0f;
-    [SerializeField] GameObject _prefabToSpawn;
+    [SerializeField] GameObject[] _prefabsToSpawn;
 
     void Start()
     {
@@ -29,7 +29,8 @@ public class SimpleSpawner : MonoBehaviour
 
     private void Spawn()
     {
-        Instantiate(_prefabToSpawn, new Vector3(transform.position.x, Random.Range(_minHeight, _maxHeight)), Quaternion.identity);
+        if (_prefabsToSpawn.Length == 0) return;
+        Instantiate(_prefabsToSpawn[Random.Range(0,_prefabsToSpawn.Length)], new Vector3(transform.position.x, Random.Range(_minHeight, _maxHeight)), Quaternion.identity);
     }
 
     private void OnDrawGizmosSelected()

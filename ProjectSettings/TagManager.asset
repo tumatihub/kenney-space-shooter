@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Projectile
   - Border
+  - FireRatePowerUp
+  - DamagePowerUp
   layers:
   - Default
   - TransparentFX

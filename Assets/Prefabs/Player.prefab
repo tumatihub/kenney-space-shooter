@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 6485920692613594859}
   - component: {fileID: 6485920692613594856}
   - component: {fileID: 6485920692613594857}
+  - component: {fileID: 7101232126287147632}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -153,6 +154,22 @@ MonoBehaviour:
   - {fileID: 6702401460734489930}
   - {fileID: 6595728464332030287}
   _weaponStats: {fileID: 11400000, guid: 279b5c961cece8549af97f9637196791, type: 2}
+--- !u!58 &7101232126287147632
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6485920692613594861}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.37038064
 --- !u!1 &6485920692710295638
 GameObject:
   m_ObjectHideFlags: 0

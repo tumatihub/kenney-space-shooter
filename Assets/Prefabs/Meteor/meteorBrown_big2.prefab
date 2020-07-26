@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6159969149310870832}
   - component: {fileID: -3819033609810385473}
   - component: {fileID: -6223359872178179031}
+  - component: {fileID: -567556606258664178}
   m_Layer: 0
   m_Name: meteorBrown_big2
   m_TagString: Untagged
@@ -113,7 +114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ba318505cf2354482944d9fa3a0548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meteorParts: []
+  _meteorParts:
+  - {fileID: 7502927746278290177, guid: fe4486e04855f1043baba1a4d13e3098, type: 3}
+  - {fileID: 7042533919058547778, guid: 7c0ddd983f7efea4db09000caa06a69b, type: 3}
+  - {fileID: 7502927746278290177, guid: fe4486e04855f1043baba1a4d13e3098, type: 3}
+  - {fileID: 7042533919058547778, guid: 7c0ddd983f7efea4db09000caa06a69b, type: 3}
   _direction: {x: -1, y: 0}
   _verticalDirectionOffset: 1
   _velocity: 2
@@ -139,3 +144,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-567556606258664178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922311607247596702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2bcf4e3f0bb4544a866f6f90b40407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageTag: Projectile
+  _stats: {fileID: 11400000, guid: 980eb137525f30c45baafb62c41eacb8, type: 2}
+  _playerStats: {fileID: 11400000, guid: 54b0407a29660af41a8cf6631436aaa1, type: 2}
